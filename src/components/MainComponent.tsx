@@ -1,21 +1,27 @@
 import type { FC } from "react";
+import NavBar from "./NavBar";
 
 const MainComponent: FC = () => {
   return (
-    <section className="h-screen bg-[#202940] ... flex flex-col overflow-hidden">
+    <section className="h-screen bg-[#202940] ... flex flex-col">
       <nav className="flex justify-between items-center px-8 py-5 border-b border-[#222]">
         <span className="text-white font-bold tracking-[0.15em] text-sm uppercase">
           KA
         </span>
         <div className="flex gap-7">
-          {["About", "Projects", "Contact"].map((l) => (
-            <span
-              key={l}
-              className="text-[#555] text-xs tracking-widest uppercase cursor-pointer hover:text-[#E91E8C] transition-colors"
-            >
-              {l}
-            </span>
-          ))}
+          {/* 
+          
+            {["About", "Projects", "Contact"].map((l) => (
+              <a
+                key={l}
+                className="text-[#555] text-xs tracking-widest uppercase cursor-pointer hover:text-[#E91E8C] transition-colors"
+              >
+                {l}
+              </a>
+            ))}
+          
+          */}
+          <NavBar />
         </div>
       </nav>
 
@@ -91,6 +97,12 @@ const MainComponent: FC = () => {
           )}
         </div>
       </div>
+
+      {/*<div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div id="aboutt" style={{ width: "100%", margin: "800px 0px" }}>
+          ABOUT
+        </div>
+            </div>*/}
     </section>
   );
 };
