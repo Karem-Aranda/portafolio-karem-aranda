@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import NavBar from "./NavBar";
+import imgProfile from "../assets/photos/foto-perfil.jpeg";
 
 const MainComponent: FC = () => {
   return (
@@ -63,13 +64,20 @@ const MainComponent: FC = () => {
 
         <div className="flex flex-col justify-between p-10">
           <div className="w-16 h-16 rounded-full border border-[#222] bg-[#1a1a1a] flex items-center justify-center text-[#444] text-xs tracking-wider">
-            foto
+            <img className="rounded-full" src={imgProfile} />
           </div>
 
           <p className="text-sm text-[#555] leading-relaxed max-w-[260px]">
-            Cosas random
-            <span className="text-[#888]"> Más cosas random</span> soy la mera
-            verdura del caldo
+            Frontend Developer enfocada en construir aplicaciones web
+            responsivas y centradas en el usuario con React, TypeScript y
+            JavaScript moderno.
+            <span className="text-[#888]">
+              {" "}
+              Experiencia integrando APIs, trabajando con Firebase y
+              transformando diseños en interfaces funcionales. Destaco por mi
+              capacidad de aprendizaje, atención al detalle y orientación a
+              resultados.
+            </span>{" "}
           </p>
 
           <div className="flex flex-col gap-2.5 mt-7">
