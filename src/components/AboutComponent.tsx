@@ -27,13 +27,18 @@ const TRACKS: Track[] = [
     label: "Backend",
     status: "En desarrollo",
     fillPercent: 40,
-    skills: ["Node.js", "Express", "SQL básico", "APIs REST"],
+    skills: ["Node.js", "APIs REST"],
   },
   {
     label: "Ciberseguridad",
     status: "Certificación en curso",
     fillPercent: 25,
-    skills: ["Fundamentos OWASP", "Seguridad de redes", "Buenas prácticas"],
+    skills: [
+      "Fundamentos de ciberseguridad",
+      "Amenazas y Ataques",
+      "Protección de datos",
+      "Privacidad",
+    ],
   },
 ];
 
@@ -51,7 +56,7 @@ const AboutComponent: FC = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[#202940] px-8 py-24 scroll-mt-20"
+      className="min-h-screen bg-[#202940] px-3 py-20 scroll-mt-3"
     >
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-6">
@@ -62,9 +67,9 @@ const AboutComponent: FC = () => {
         </div>
 
         <h2 className="text-[42px] md:text-[56px] font-bold text-white leading-[1.02] tracking-[-0.02em] uppercase mb-8 max-w-3xl">
-          Frontend hoy.
+          Creando en Frontend.
           <br />
-          <span className="text-[#E91E8C]">Full-stack en camino.</span>
+          <span className="text-[#E91E8C]">Creciendo en FullStack.</span>
         </h2>
 
         <p className="text-sm md:text-base text-[#888] leading-relaxed max-w-4xl mb-16">
@@ -132,11 +137,9 @@ const AboutComponent: FC = () => {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-t border-[#1a1a1a] pt-10">
           <p className="text-sm text-[#666] mr-auto">
             ¿Buscas frontend o full-stack en tu equipo?{" "}
-            <span className="text-white">Hablemos.</span>
+            <span className="text-white">Contactame !.</span>
           </p>
-          {/*href="mailto:tu-correo@ejemplo.com" className="bg-[#E91E8C] text-white
-          text-[11px] font-bold tracking-[0.15em] uppercase py-3 px-6
-            rounded-[2px] hover:bg-[#c91878] transition-colors text-center"*/}
+
           <a>Contáctame →</a>
           <button className="border border-[#222] text-[#444] text-[11px] tracking-[0.12em] uppercase py-3 px-6 rounded-[2px] hover:border-[#E91E8C] hover:text-[#E91E8C] transition-colors">
             Descargar CV

@@ -17,18 +17,20 @@ const PROJECTS: Project[] = [
     repo: "https://github.com/tu-usuario/proyecto-uno",
   },
   {
-    name: "Proyecto Dos",
-    description: "In process",
-    stack: ["React", "Node.js", "REST API"],
-    link: "https://tu-demo.com",
-    repo: "https://github.com/tu-usuario/proyecto-dos",
+    name: "Movie Challenge",
+    description:
+      "Aplicación web de exploración de películas desarrollada con React y TypeScript, utilizando una API externa para obtener y mostrar información de películas dinámicamente. Permite explorar el catálogo y filtrar los resultados por género y año de lanzamiento.",
+    stack: ["React", "TS", "REST API"],
+    link: "https://movie-challenge-git-main-karem-aranda.vercel.app/",
+    repo: "https://github.com/Karem-Aranda/DEV014-movie-challenge-fw",
   },
   {
-    name: "Proyecto Tres",
-    description: "In process",
+    name: "burger-queen-api-client",
+    description:
+      "Aplicación web de gestión de pedidos para un restaurante, desarrollada con TypeScript y Vite. Permite a los usuarios realizar pedidos, ver el estado de los mismos y gestionar el menú del restaurante.",
     stack: ["TypeScript", "Vite"],
-    link: "https://tu-demo.com",
-    repo: "https://github.com/tu-usuario/proyecto-tres",
+    link: "https://burger-queen-api-client-three.vercel.app/",
+    repo: "https://github.com/Karem-Aranda/DEV014-burger-queen-api-client",
   },
 ];
 
