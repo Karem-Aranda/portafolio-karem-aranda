@@ -29,9 +29,9 @@ const ContactComponent: FC = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-[#202940] px-8 py-24 flex flex-col scroll-mt-20"
+      className="min-h-screen bg-[#202940] px-8 pb-24 flex flex-col scroll-mt-10"
     >
-      <div className="max-w-5xl mx-auto my-[150px] w-full flex-1 flex flex-col justify-center">
+      <div className="max-w-5xl mx-auto mb-[50px] w-full flex-1 flex flex-col justify-center">
         <div className="flex items-center gap-4 mb-6">
           <span className="text-[20px] text-[#E91E8C] tracking-[0.2em] uppercase font-bold">
             Contact
@@ -40,13 +40,12 @@ const ContactComponent: FC = () => {
           <div className="flex-1 h-[3px] bg-[#2a3350]" />
         </div>
 
-        <div className="flex items-center gap-2 border border-[#E91E8C] text-[#E91E8C] text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 rounded-[2px] w-fit mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#E91E8C]" />
-          Disponible de inmediato
-        </div>
-
-        <div className="flex items-center mb-[80px]">
+        <div className="flex items-center mb-[40px]">
           <div className="w-[50%]flex-wrap">
+            <div className="flex items-center gap-2 border border-[#E91E8C] text-[#E91E8C] text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 rounded-[2px] w-fit mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E91E8C]" />
+              Disponible de inmediato
+            </div>
             <h2 className="text-[42px] md:text-[64px] font-bold text-white leading-[0.98] tracking-[-0.02em] uppercase mb-6 max-w-3xl">
               Medios de
               <br />
@@ -58,9 +57,9 @@ const ContactComponent: FC = () => {
               quieres platicar, no dudes en contactarme.
             </p>
           </div>
-          <div className="w-[50%] flex justify-center">
-            <div className="w-full max-w-[250px] lg:max-w-[250px] lg:flex-shrink-0 flex justify-center lg:justify-end lg:items-start">
-              <div className="relative w-full aspect-[4/5] h-[250px]">
+          <div className="w-[50%] flex justify-center -translate-y-5">
+            <div className="w-full max-w-[275px] lg:max-w-[275px] lg:flex-shrink-0 flex justify-center lg:justify-end lg:items-start">
+              <div className="relative w-full aspect-[4/5] h-[275px]">
                 <img
                   src={imgContact}
                   alt="Karem Aranda"
@@ -95,7 +94,7 @@ const ContactComponent: FC = () => {
 
         <div className="h-[2px] bg-[#2a3350] mb-[40px]" />
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-10">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-5">
           <p className="text-sm text-[#666] mr-auto">¿Prefieres algo?</p>
 
           <a
@@ -111,12 +110,12 @@ const ContactComponent: FC = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto w-full border-t border-[#1a1a1a] pt-6 mt-10 flex justify-between items-center">
-        <span className="text-[10px] text-[#333] tracking-[0.15em] uppercase">
+      <div className="max-w-5xl mx-auto w-full border-t border-t-2 border-[#2a3350] pt-6 mt-2 flex justify-between items-center">
+        <span className="text-[10px] text-[white] tracking-[0.15em] uppercase">
           © {new Date().getFullYear()} Karem Aranda
         </span>
 
-        <span className="text-[10px] text-[#333] tracking-[0.15em] uppercase">
+        <span className="text-[10px] text-[white] tracking-[0.15em] uppercase">
           Hecho con React + TypeScript
         </span>
       </div>

@@ -53,7 +53,7 @@ const MainComponent: FC = () => {
         <div className="lg:col-span-5 flex flex-col justify-center gap-8 p-8 md:p-12 bg-[#1b2337]/30">
           <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
             <img
-              className="object-cover object-center rounded-full h-96 w-96"
+              className="object-cover object-center rounded-full w-80"
               src={imgProfile}
               alt="Karem Aranda"
             />
@@ -71,11 +71,11 @@ const MainComponent: FC = () => {
             </span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-25 sm:gap-1ml-[10spx] w-full max-w-lg">
-            <button className="flex-1 bg-[#E91E8C] text-white text-xs font-bold tracking-widest uppercase py-4 px-6 rounded shadow-lg shadow-[#E91E8C]/25 hover:bg-[#c91878] transition-all transform hover:-translate-y-0.5">
+          <div className="flex justify-center mx-auto sm:flex-row w-full max-w-lg">
+            <button className="w-[200px] bg-[#E91E8C] text-white text-xs font-bold tracking-widest uppercase py-4 px-6 rounded shadow-lg shadow-[#E91E8C]/25 hover:bg-[#c91878] transition-all transform hover:-translate-y-0.5">
               Ver proyectos →
             </button>
-            <button className="flex-1 ml-[10px] border border-slate-600 text-slate-200 text-xs font-bold tracking-widest uppercase py-4 px-6 rounded hover:border-[#E91E8C] hover:text-[#E91E8C] transition-all">
+            <button className="w-[200px] ml-[10px] border border-slate-600 text-slate-200 text-xs font-bold tracking-widest uppercase py-4 px-6 rounded hover:border-[#E91E8C] hover:text-[#E91E8C] transition-all">
               Descargar CV
             </button>
           </div>

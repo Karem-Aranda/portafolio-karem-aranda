@@ -38,7 +38,7 @@ const ProjectsComponent: FC = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-[#202940] px-8 py-24 scroll-mt-20"
+      className="min-h-screen bg-[#202940] px-8 pb-24 scroll-mt-10"
     >
       <div className="max-w-5xl mx-auto">
         {/* Eyebrow */}

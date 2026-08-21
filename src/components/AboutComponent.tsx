@@ -133,18 +133,6 @@ const AboutComponent: FC = () => {
             ))}
           </div>
         </div>
-
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-t border-[#1a1a1a] pt-10">
-          <p className="text-sm text-[#666] mr-auto">
-            ¿Buscas frontend o full-stack en tu equipo?{" "}
-            <span className="text-white">Contactame !.</span>
-          </p>
-
-          <a>Contáctame →</a>
-          <button className="border border-[#222] text-[#444] text-[11px] tracking-[0.12em] uppercase py-3 px-6 rounded-[2px] hover:border-[#E91E8C] hover:text-[#E91E8C] transition-colors">
-            Descargar CV
-          </button>
-        </div>
       </div>
     </section>
   );
