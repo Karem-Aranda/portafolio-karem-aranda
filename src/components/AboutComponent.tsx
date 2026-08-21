@@ -91,7 +91,6 @@ const AboutComponent: FC = () => {
                 {track.status}
               </p>
 
-              {/* Progress bar */}
               <div className="h-[3px] w-full bg-[#1a2036] rounded-full overflow-hidden mb-5">
                 <div
                   className="h-full bg-[#E91E8C] rounded-full"

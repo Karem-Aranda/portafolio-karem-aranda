@@ -68,15 +68,15 @@ const MainComponent: FC = () => {
           </div>
 
           <p className="text-sm text-[#555] leading-relaxed max-w-[260px]">
-            Frontend Developer enfocada en construir aplicaciones web
-            responsivas y centradas en el usuario con React, TypeScript y
-            JavaScript moderno.
+            Frontend Developer especializada en crear aplicaciones web
+            responsivas y centradas en el usuario con React, TS y JS.
+            Experiencia integrando APIs, trabajando con Firebase y transformando
+            diseños en interfaces funcionales.
             <span className="text-[#888]">
               {" "}
-              Experiencia integrando APIs, trabajando con Firebase y
-              transformando diseños en interfaces funcionales. Destaco por mi
-              capacidad de aprendizaje, atención al detalle y orientación a
-              resultados.
+              En constante evolución hacie el perfil Full Stack y actuamente
+              certificándome con Cisco para fortalecer mis conocimientos en
+              redes y ciberseguridad.
             </span>{" "}
           </p>
 

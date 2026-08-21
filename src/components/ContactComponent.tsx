@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import imgContact from "../assets/photos/foto-contact.jpeg";
 
 type ContactMethod = {
   label: string;
@@ -30,7 +31,7 @@ const ContactComponent: FC = () => {
       id="contact"
       className="min-h-screen bg-[#202940] px-8 py-24 flex flex-col scroll-mt-20"
     >
-      <div className="max-w-5xl mx-auto w-full flex-1 flex flex-col justify-center">
+      <div className="max-w-5xl mx-auto my-[150px] w-full flex-1 flex flex-col justify-center">
         <div className="flex items-center gap-4 mb-6">
           <span className="text-[20px] text-[#E91E8C] tracking-[0.2em] uppercase font-bold">
             Contact
@@ -44,17 +45,33 @@ const ContactComponent: FC = () => {
           Disponible de inmediato
         </div>
 
-        <h2 className="text-[42px] md:text-[64px] font-bold text-white leading-[0.98] tracking-[-0.02em] uppercase mb-6 max-w-3xl">
-          Medios de
-          <br />
-          <span className="text-[#E91E8C]">Contacto.</span>
-        </h2>
+        <div className="flex items-center mb-[80px]">
+          <div className="w-[50%]flex-wrap">
+            <h2 className="text-[42px] md:text-[64px] font-bold text-white leading-[0.98] tracking-[-0.02em] uppercase mb-6 max-w-3xl">
+              Medios de
+              <br />
+              <span className="text-[#E91E8C]">Contacto.</span>
+            </h2>{" "}
+            <p className="text-sm md:text-base text-[#888] leading-relaxed max-w-xl mb-16">
+              Busco activamente oportunidades como Frontend o Full-stack
+              Developer, full-time o freelance. Si tienes una vacante abierta o
+              quieres platicar, no dudes en contactarme.
+            </p>
+          </div>
+          <div className="w-[50%] flex justify-center">
+            <div className="w-full max-w-[250px] lg:max-w-[250px] lg:flex-shrink-0 flex justify-center lg:justify-end lg:items-start">
+              <div className="relative w-full aspect-[4/5] h-[250px]">
+                <img
+                  src={imgContact}
+                  alt="Karem Aranda"
+                  className="w-full h-full object-contain rounded-[10px] transition-all duration-500 border  border-[#E91E8C]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <p className="text-sm md:text-base text-[#888] leading-relaxed max-w-xl mb-16">
-          Busco activamente oportunidades como Frontend o Full-stack Developer,
-          full-time o freelance. Si tienes una vacante abierta o quieres
-          platicar, no dudes en contactarme.
-        </p>
+        <div className="h-[2px] bg-[#2a3350] mb-[40px]" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1a1a] mb-16">
           {CONTACT_METHODS.map((method) => (
@@ -76,7 +93,9 @@ const ContactComponent: FC = () => {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-t border-[#1a1a1a] pt-10">
+        <div className="h-[2px] bg-[#2a3350] mb-[40px]" />
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-10">
           <p className="text-sm text-[#666] mr-auto">¿Prefieres algo?</p>
 
           <a

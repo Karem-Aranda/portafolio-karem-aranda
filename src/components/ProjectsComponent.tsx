@@ -55,7 +55,6 @@ const ProjectsComponent: FC = () => {
           <span className="text-[#E91E8C]">he construido. </span>
         </h2>
 
-        {/* Project list */}
         <div className="flex flex-col border-t border-[#1a1a1a]">
           {PROJECTS.map((project, i) => (
             <div
