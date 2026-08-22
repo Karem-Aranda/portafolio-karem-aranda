@@ -34,7 +34,11 @@ const PROJECTS: Project[] = [
   },
 ];
 
-const ProjectsComponent: FC = ({ messages }: any) => {
+interface ProjectsComponentProps {
+  messages: any;
+}
+
+const ProjectsComponent: FC<ProjectsComponentProps> = ({ messages }) => {
   return (
     <section
       id="projects"

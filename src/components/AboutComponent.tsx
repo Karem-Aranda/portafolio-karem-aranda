@@ -52,7 +52,11 @@ const SOFT_SKILLS: string[] = [
   "Trabajo en equipo",
 ];
 
-const AboutComponent: FC = ({ messages }: any) => {
+interface AboutComponentProps {
+  messages: any;
+}
+
+const AboutComponent: FC<AboutComponentProps> = ({ messages }) => {
   return (
     <section
       id="about"
