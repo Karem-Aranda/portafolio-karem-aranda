@@ -1,8 +1,17 @@
 import type { FC } from "react";
 import NavBar from "./NavBar";
 import imgProfile from "../assets/photos/foto-perfil.jpeg";
+import { LANGUAGES } from "../assets/messages/root";
 
-const MainComponent: FC = () => {
+interface MainComponentProps {
+  messages: any;
+  handleLanguageChange: (newLanguage: string) => void;
+}
+
+const MainComponent: FC<MainComponentProps> = ({
+  messages,
+  handleLanguageChange,
+}) => {
   return (
     <section className="min-h-screen bg-[#202940] text-slate-200 flex flex-col justify-between">
       <nav className="flex justify-between items-center px-6 md:px-12 py-5 border-b border-slate-700/50">
@@ -25,6 +34,20 @@ const MainComponent: FC = () => {
             <p className="text-sm text-slate-200 font-medium">{value}</p>
           </div>
         ))}
+        <div className="">
+          <div
+            className="border border-[white] cursor-pointer"
+            onClick={() => handleLanguageChange(LANGUAGES.ENGLISH)}
+          >
+            ENG
+          </div>
+          <div
+            className="border border-[white] cursor-pointer"
+            onClick={() => handleLanguageChange(LANGUAGES.SPANISH)}
+          >
+            ESP
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 flex-1">
@@ -73,10 +96,10 @@ const MainComponent: FC = () => {
 
           <div className="flex justify-center mx-auto sm:flex-row w-full max-w-lg">
             <button className="w-[200px] bg-[#E91E8C] text-white text-xs font-bold tracking-widest uppercase py-4 px-6 rounded shadow-lg shadow-[#E91E8C]/25 hover:bg-[#c91878] transition-all transform hover:-translate-y-0.5">
-              Ver proyectos →
+              {messages.btnSeeProjectsLabel} →
             </button>
             <button className="w-[200px] ml-[10px] border border-slate-600 text-slate-200 text-xs font-bold tracking-widest uppercase py-4 px-6 rounded hover:border-[#E91E8C] hover:text-[#E91E8C] transition-all">
-              Descargar CV
+              {messages.btnSeeDowaloadCVLabel} →
             </button>
           </div>
         </div>

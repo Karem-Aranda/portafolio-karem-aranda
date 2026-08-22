@@ -25,7 +25,7 @@ const CONTACT_METHODS: ContactMethod[] = [
   },
 ];
 
-const ContactComponent: FC = () => {
+const ContactComponent: FC = ({ messages }: any) => {
   return (
     <section
       id="contact"

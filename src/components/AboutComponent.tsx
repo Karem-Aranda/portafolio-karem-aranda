@@ -52,7 +52,7 @@ const SOFT_SKILLS: string[] = [
   "Trabajo en equipo",
 ];
 
-const AboutComponent: FC = () => {
+const AboutComponent: FC = ({ messages }: any) => {
   return (
     <section
       id="about"

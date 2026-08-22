@@ -34,7 +34,7 @@ const PROJECTS: Project[] = [
   },
 ];
 
-const ProjectsComponent: FC = () => {
+const ProjectsComponent: FC = ({ messages }: any) => {
   return (
     <section
       id="projects"
