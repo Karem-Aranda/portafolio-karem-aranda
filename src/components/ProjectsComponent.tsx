@@ -1,4 +1,7 @@
 import type { FC } from "react";
+interface ProjectsComponentProps {
+  messages: any;
+}
 
 type Project = {
   name: string;
@@ -8,57 +11,64 @@ type Project = {
   repo?: string;
 };
 
-const PROJECTS: Project[] = [
+const PROJECTS_META: Omit<Project, "name" | "description">[] = [
   {
-    name: "Proyecto Uno",
-    description: "In process",
     stack: ["React", "TypeScript", "Tailwind"],
     link: "https://tu-demo.com",
     repo: "https://github.com/tu-usuario/proyecto-uno",
   },
   {
-    name: "Movie Challenge",
-    description:
-      "Aplicación web de exploración de películas desarrollada con React y TypeScript, utilizando una API externa para obtener y mostrar información de películas dinámicamente. Permite explorar el catálogo y filtrar los resultados por género y año de lanzamiento.",
     stack: ["React", "TS", "REST API"],
     link: "https://movie-challenge-git-main-karem-aranda.vercel.app/",
     repo: "https://github.com/Karem-Aranda/DEV014-movie-challenge-fw",
   },
   {
-    name: "burger-queen-api-client",
-    description:
-      "Aplicación web de gestión de pedidos para un restaurante, desarrollada con TypeScript y Vite. Permite a los usuarios realizar pedidos, ver el estado de los mismos y gestionar el menú del restaurante.",
     stack: ["TypeScript", "Vite"],
     link: "https://burger-queen-api-client-three.vercel.app/",
     repo: "https://github.com/Karem-Aranda/DEV014-burger-queen-api-client",
   },
 ];
 
-interface ProjectsComponentProps {
-  messages: any;
-}
-
 const ProjectsComponent: FC<ProjectsComponentProps> = ({ messages }) => {
+  const projects = messages?.projects;
+
+  if (!projects) {
+    return null;
+  }
+
+  const items = Array.isArray(projects.items) ? projects.items : [];
+
+  const PROJECTS: Project[] = items.map(
+    (item: { title: string; description: string }, i: number) => {
+      const meta = PROJECTS_META[i] ?? {};
+      return {
+        name: item?.title ?? "",
+        description: item?.description ?? "",
+        stack: meta.stack ?? [],
+        link: meta.link,
+        repo: meta.repo,
+      };
+    }
+  );
+
   return (
     <section
       id="projects"
       className="min-h-screen bg-[#202940] px-8 pb-24 scroll-mt-10"
     >
       <div className="max-w-5xl mx-auto">
-        {/* Eyebrow */}
         <div className="flex items-center gap-4 mb-6">
           <span className="text-[20px] text-[#E91E8C] tracking-[0.2em] uppercase font-bold">
-            Projects
+            {projects.headerLabel}
           </span>
 
           <div className="flex-1 h-[3px] bg-[#2a3350]" />
         </div>
 
-        {/* Heading */}
         <h2 className="text-[42px] md:text-[56px] font-bold text-white leading-[1.02] tracking-[-0.02em] uppercase mb-14 max-w-3xl">
-          Cosas que
+          {projects.titleLabel}
           <br />
-          <span className="text-[#E91E8C]">he construido. </span>
+          <span className="text-[#E91E8C]">{projects.secondTitleLabel} </span>
         </h2>
 
         <div className="flex flex-col border-t border-[#1a1a1a]">
@@ -81,9 +91,9 @@ const ProjectsComponent: FC<ProjectsComponentProps> = ({ messages }) => {
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  {project.stack.map((s) => (
+                  {project.stack.map((s, si) => (
                     <span
-                      key={s}
+                      key={`${project.name}-${si}-${s}`}
                       className="text-[10px] text-[#888] tracking-wide border border-[#2a3350] rounded-[2px] px-2.5 py-1"
                     >
                       {s}

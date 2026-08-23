@@ -21,28 +21,29 @@ const MainComponent: FC<MainComponentProps> = ({
         <NavBar />
       </nav>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-6 md:px-12 py-4 border-b border-slate-700/50 bg-[#181f33]/40">
+      <div className="flex justify-space-between gap-4 px-6 md:px-12 py-4 border-b border-slate-700/50 bg-[#181f33]/40">
         {[
           { label: "Role", value: "Fullstack Developer" },
           { label: "Stack", value: "React · Node · TypeScript" },
           { label: "Available for", value: "Full-time · Freelance" },
         ].map(({ label, value }) => (
-          <div key={label}>
+          <div key={label} className="w-[25%]">
             <p className="text-[11px] text-slate-400 font-semibold tracking-widest uppercase mb-0.5">
               {label}
             </p>
             <p className="text-sm text-slate-200 font-medium">{value}</p>
           </div>
         ))}
-        <div className="">
+
+        <div className="flex justify-end w-[25%]">
           <div
-            className="border border-[white] cursor-pointer"
+            className="flex items-center text-[11px] text-slate-400 border border-[#94A3B8] hover:border-[#E91E8C] hover:text-[#E91E8C] rounded cursor-pointer px-10 mx-3"
             onClick={() => handleLanguageChange(LANGUAGES.ENGLISH)}
           >
             ENG
           </div>
           <div
-            className="border border-[white] cursor-pointer"
+            className="flex items-center text-[11px] text-slate-400 border border-[#94A3B8] hover:border-[#E91E8C] hover:text-[#E91E8C] rounded cursor-pointer px-10 mx-3"
             onClick={() => handleLanguageChange(LANGUAGES.SPANISH)}
           >
             ESP
@@ -83,14 +84,9 @@ const MainComponent: FC<MainComponentProps> = ({
           </div>
 
           <p className="text-base mx-auto text-slate-300 text-justify leading-relaxed max-w-md">
-            Full stack Developer especializada en crear aplicaciones web
-            responsivas y centradas en el usuario con React, TS y JS.
-            Experiencia integrando APIs, trabajando con Firebase y transformando
-            diseños en interfaces funcionales.
+            {messages.DescriptionLabel}
             <span className="text-slate-400 block mt-2">
-              En constante evolución hacia el perfil Full Stack y actualmente
-              certificándome con Cisco para fortalecer mis conocimientos en
-              redes y ciberseguridad.
+              {messages.ContinuosDescriptionLabel}
             </span>
           </p>
 

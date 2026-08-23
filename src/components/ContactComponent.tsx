@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import imgContact from "../assets/photos/foto-contact.jpeg";
+import imgCat from "../assets/photos/cat-cat-dance.gif";
 
 type ContactMethod = {
   label: string;
@@ -38,7 +39,7 @@ const ContactComponent: FC<ContactComponentProps> = ({ messages }) => {
       <div className="max-w-5xl mx-auto mb-[50px] w-full flex-1 flex flex-col justify-center">
         <div className="flex items-center gap-4 mb-6">
           <span className="text-[20px] text-[#E91E8C] tracking-[0.2em] uppercase font-bold">
-            Contact
+            {messages.contact.headerLabel}
           </span>
 
           <div className="flex-1 h-[3px] bg-[#2a3350]" />
@@ -48,17 +49,17 @@ const ContactComponent: FC<ContactComponentProps> = ({ messages }) => {
           <div className="w-[50%]flex-wrap">
             <div className="flex items-center gap-2 border border-[#E91E8C] text-[#E91E8C] text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 rounded-[2px] w-fit mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E91E8C]" />
-              Disponible de inmediato
+              {messages.contact.availableLabel}
             </div>
             <h2 className="text-[42px] md:text-[64px] font-bold text-white leading-[0.98] tracking-[-0.02em] uppercase mb-6 max-w-3xl">
-              Medios de
+              {messages.contact.titleLabel}
               <br />
-              <span className="text-[#E91E8C]">Contacto.</span>
+              <span className="text-[#E91E8C]">
+                {messages.contact.secondTitleLabel}.
+              </span>
             </h2>{" "}
             <p className="text-sm md:text-base text-[#888] leading-relaxed max-w-xl mb-16">
-              Busco activamente oportunidades como Frontend o Full-stack
-              Developer, full-time o freelance. Si tienes una vacante abierta o
-              quieres platicar, no dudes en contactarme.
+              {messages.contact.descriptionLabel}
             </p>
           </div>
           <div className="w-[50%] flex justify-center -translate-y-5">
@@ -96,20 +97,23 @@ const ContactComponent: FC<ContactComponentProps> = ({ messages }) => {
           ))}
         </div>
 
-        <div className="h-[2px] bg-[#2a3350] mb-[40px]" />
+        <div className="h-[2px] bg-[#2a3350] mb-[20px]" />
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-5">
-          <p className="text-sm text-[#666] mr-auto">¿Prefieres algo?</p>
-
+          <div className="mr-auto  gap-5">
+            <img
+              className="h-auto w-32 rounded-xl object-contain md:w-36"
+              src={imgCat}
+            />{" "}
+          </div>
           <a
             href="mailto:tu-correo@ejemplo.com"
             className="bg-[#E91E8C] text-white text-[11px] font-bold tracking-[0.15em] uppercase py-3 px-6 rounded-[2px] hover:bg-[#c91878] transition-colors text-center"
           >
-            Escríbeme →
+            {messages.contact.btnSendMessageLabel} →
           </a>
-
           <button className="border border-[white] text-[white] text-[11px] tracking-[0.12em] uppercase py-3 px-6 rounded-[2px] hover:border-[#E91E8C] hover:text-[#E91E8C] transition-colors">
-            Descargar CV
+            {messages.contact.btnCvLabel}
           </button>
         </div>
       </div>
@@ -120,7 +124,7 @@ const ContactComponent: FC<ContactComponentProps> = ({ messages }) => {
         </span>
 
         <span className="text-[10px] text-[white] tracking-[0.15em] uppercase">
-          Hecho con React + TypeScript
+          {messages.contact.footertextLabel}
         </span>
       </div>
     </section>
