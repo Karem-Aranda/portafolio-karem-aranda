@@ -73,8 +73,9 @@ export const ENGLISH_MESSAGES = {
     secondTitleLabel: "BUILT",
     items: [
       {
-        title: "PROJECT ONE",
-        description: "In Progress",
+        title: "THRONES OF COMBAT",
+        description:
+          "Thrones of Combat is a 2D web fighting game inspired by the world of Game of Thrones. Players will be able to choose characters from different houses and fight in arenas shaped by their identities. The project is in development using React, TypeScript, Vite, and Phaser 4, with Codex supporting the planning and development process.",
       },
       {
         title: "MOVIE CHALLENGE",

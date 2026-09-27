@@ -67,8 +67,9 @@ export const SPANISH_MESSAGES = {
     secondTitleLabel: "HE CONSTRUIDO",
     items: [
       {
-        title: "PROYECTO UNO",
-        description: "In Progress",
+        title: "THRONES OF COMBAT",
+        description:
+          "Thrones of Combat es un videojuego de peleas 2D para web, inspirado en el universo de Game of Thrones. Los jugadores podrán elegir personajes de distintas casas y enfrentarse en arenas que reflejan su identidad. Es un proyecto en desarrollo con React, TypeScript, Vite y Phaser 4, creado con apoyo de Codex para planear y desarrollar sus funcionalidades.",
       },
       {
         title: "MOVIE CHALLENGE",
