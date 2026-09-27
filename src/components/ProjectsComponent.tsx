@@ -13,12 +13,12 @@ type Project = {
 
 const PROJECTS_META: Omit<Project, "name" | "description">[] = [
   {
-    stack: ["React", "TypeScript", "Tailwind"],
-    link: "https://tu-demo.com",
-    repo: "https://github.com/tu-usuario/proyecto-uno",
+    stack: ["React", "TypeScript", "Tailwind", "Codex"],
+    link: "https://thrones-of-combat.vercel.app/",
+    repo: "https://github.com/Karem-Aranda/thrones-of-combat",
   },
   {
-    stack: ["React", "TS", "REST API"],
+    stack: ["React", "TypeScript", "Rest API"],
     link: "https://movie-challenge-git-main-karem-aranda.vercel.app/",
     repo: "https://github.com/Karem-Aranda/DEV014-movie-challenge-fw",
   },
