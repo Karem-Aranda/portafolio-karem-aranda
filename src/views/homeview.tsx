@@ -21,6 +21,8 @@ export function HomeView() {
     <>
       <MainComponent
         messages={messages.main}
+        language={language}
+        contactLabel={messages.contact.headerLabel}
         handleLanguageChange={handleLanguageChange}
       />
       <AboutComponent messages={messages} />
