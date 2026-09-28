@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import imgContact from "../assets/photos/foto-contact.jpeg";
 import imgCat from "../assets/photos/cat-cat-dance.gif";
+import { LANGUAGES } from "../assets/messages/root";
 
 type ContactMethod = {
   label: string;
@@ -28,9 +29,14 @@ const CONTACT_METHODS: ContactMethod[] = [
 
 interface ContactComponentProps {
   messages: any;
+  language: string;
 }
 
-const ContactComponent: FC<ContactComponentProps> = ({ messages }) => {
+const ContactComponent: FC<ContactComponentProps> = ({ messages, language }) => {
+  const cvFileName = language === LANGUAGES.SPANISH
+    ? "Karem_Aranda_Full_Stack_Developer_ES.docx.pdf"
+    : "Karem_Aranda_Full_Stack_Developer.docx.pdf";
+
   return (
     <section
       id="contact"
@@ -112,9 +118,13 @@ const ContactComponent: FC<ContactComponentProps> = ({ messages }) => {
           >
             {messages.contact.btnSendMessageLabel} →
           </a>
-          <button className="border border-[white] text-[white] text-[11px] tracking-[0.12em] uppercase py-3 px-6 rounded-[2px] hover:border-[#E91E8C] hover:text-[#E91E8C] transition-colors">
+          <a
+            href={`/cv/${cvFileName}`}
+            download={cvFileName}
+            className="border border-[white] text-[white] text-[11px] tracking-[0.12em] uppercase py-3 px-6 rounded-[2px] hover:border-[#E91E8C] hover:text-[#E91E8C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E91E8C] transition-colors text-center"
+          >
             {messages.contact.btnCvLabel}
-          </button>
+          </a>
         </div>
       </div>
 
