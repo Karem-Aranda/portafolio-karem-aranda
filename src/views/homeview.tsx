@@ -27,7 +27,7 @@ export function HomeView() {
       />
       <AboutComponent messages={messages} />
       <ProjectsComponent messages={messages} />
-      <ContactComponent messages={messages} />
+      <ContactComponent messages={messages} language={language} />
     </>
   );
 }
