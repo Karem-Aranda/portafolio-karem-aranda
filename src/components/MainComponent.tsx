@@ -2,121 +2,87 @@ import type { FC } from "react";
 import NavBar from "./NavBar";
 import imgProfile from "../assets/photos/foto-perfil.jpeg";
 import { LANGUAGES } from "../assets/messages/root";
+import { ENGLISH_MESSAGES } from "../assets/messages/english";
 
 interface MainComponentProps {
-  messages: any;
+  messages: typeof ENGLISH_MESSAGES.main;
+  language: string;
+  contactLabel: string;
   handleLanguageChange: (newLanguage: string) => void;
 }
 
 const MainComponent: FC<MainComponentProps> = ({
   messages,
+  language,
+  contactLabel,
   handleLanguageChange,
-}) => {
-  return (
-    <section className="min-h-screen bg-[#202940] text-slate-200 flex flex-col justify-between">
-      <nav className="flex justify-between items-center px-6 md:px-12 py-5 border-b border-slate-700/50">
-        <span className="text-white font-bold tracking-[0.2em] text-base uppercase">
-          KA
-        </span>
+}) => (
+  <section className="home-hero flex min-h-screen flex-col bg-[#202940] text-slate-200">
+    <header className="home-header flex items-center justify-between border-b border-slate-700/50 px-6 py-4 md:px-12 md:py-5">
+      <a href="#home" aria-label="Karem Aranda, home" className="ka-mark shrink-0 font-bold uppercase tracking-[0.12em] text-white">
+        K<span className="text-[#E91E8C]">A</span>
+      </a>
+      <div className="home-header-controls flex min-w-0 items-center gap-3 sm:gap-5">
         <NavBar />
-      </nav>
+        <div className="language-switch flex shrink-0 rounded-full border border-slate-500/60 p-0.5" role="group" aria-label="Language / Idioma">
+          <button type="button" onClick={() => handleLanguageChange(LANGUAGES.ENGLISH)} aria-label="English" aria-pressed={language === LANGUAGES.ENGLISH} className={`language-option rounded-full px-3 py-1.5 text-xs font-bold text-slate-300 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E91E8C] ${language === LANGUAGES.ENGLISH ? "is-selected" : ""}`}>ENG</button>
+          <button type="button" onClick={() => handleLanguageChange(LANGUAGES.SPANISH)} aria-label="Español" aria-pressed={language === LANGUAGES.SPANISH} className={`language-option rounded-full px-3 py-1.5 text-xs font-bold text-slate-300 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E91E8C] ${language === LANGUAGES.SPANISH ? "is-selected" : ""}`}>ESP</button>
+        </div>
+      </div>
+    </header>
 
-      <div className="flex justify-space-between gap-4 px-6 md:px-12 py-4 border-b border-slate-700/50 bg-[#181f33]/40">
-        {[
-          { label: "Role", value: "Fullstack Developer" },
-          { label: "Stack", value: "React · Node · TypeScript" },
-          { label: "Available for", value: "Full-time · Freelance" },
-        ].map(({ label, value }) => (
-          <div key={label} className="w-[25%]">
-            <p className="text-[11px] text-slate-400 font-semibold tracking-widest uppercase mb-0.5">
-              {label}
-            </p>
-            <p className="text-sm text-slate-200 font-medium">{value}</p>
-          </div>
-        ))}
+    <div className="hidden border-b border-slate-700/50 bg-[#181f33]/40 px-12 py-4 lg:flex">
+      {[
+        { label: "Role", value: "Fullstack Developer" },
+        { label: "Stack", value: "React · Node · TypeScript" },
+        { label: "Available for", value: "Full-time · Freelance" },
+      ].map(({ label, value }) => (
+        <div key={label} className="w-1/4">
+          <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-widest text-slate-400">{label}</p>
+          <p className="text-sm font-medium text-slate-200">{value}</p>
+        </div>
+      ))}
+    </div>
 
-        <div className="flex justify-end w-[25%]">
-          <div
-            className="flex items-center text-[11px] text-slate-400 border border-[#94A3B8] hover:border-[#E91E8C] hover:text-[#E91E8C] rounded cursor-pointer px-10 mx-3"
-            onClick={() => handleLanguageChange(LANGUAGES.ENGLISH)}
-          >
-            ENG
-          </div>
-          <div
-            className="flex items-center text-[11px] text-slate-400 border border-[#94A3B8] hover:border-[#E91E8C] hover:text-[#E91E8C] rounded cursor-pointer px-10 mx-3"
-            onClick={() => handleLanguageChange(LANGUAGES.SPANISH)}
-          >
-            ESP
-          </div>
+    <main id="home" className="home-main grid flex-1 grid-cols-1 lg:grid-cols-12">
+      <div className="home-intro flex flex-col p-6 sm:p-8 md:p-12 lg:col-span-7 lg:justify-between lg:border-r lg:border-slate-700/50">
+        <div className="availability flex w-fit items-center gap-2 rounded-full border border-[#E91E8C] bg-[#E91E8C]/10 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#E91E8C]">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-[#E91E8C]" />
+          Open to work
+        </div>
+        <h1 className="home-name my-7 font-black uppercase leading-[0.88] tracking-tight text-white lg:my-auto lg:py-10">
+          <span className="block">Karem</span>
+          <span className="block text-[#E91E8C]">Aranda</span>
+        </h1>
+        <div className="hidden items-center gap-4 lg:flex">
+          <div className="h-px w-8 bg-slate-500" />
+          <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-slate-400">scroll ↓</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 flex-1">
-        <div className="lg:col-span-7 flex flex-col justify-between p-8 md:p-12 lg:border-r border-slate-700/50">
-          <div className="flex items-center gap-2 border border-[#E91E8C] text-[#E91E8C] bg-[#E91E8C]/10 text-[11px] font-semibold tracking-[0.18em] uppercase px-3.5 py-1.5 rounded-full w-fit">
-            <span className="w-2 h-2 rounded-full bg-[#E91E8C] animate-pulse" />
-            Open to work
-          </div>
-
-          <div className="my-10 lg:my-auto">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight uppercase">
-              Karem
-              <br />
-              <span className="inline block ml-70 text-[#E91E8C]">Aranda</span>
-            </h1>
-          </div>
-
-          <div className="hidden lg:flex items-center gap-4">
-            <div className="w-8 h-px bg-slate-500" />
-            <span className="text-[11px] text-slate-400 tracking-[0.2em] uppercase font-medium">
-              scroll ↓
-            </span>
-          </div>
+      <div className="home-profile flex flex-col gap-6 bg-[#1b2337]/30 px-6 pb-8 sm:px-8 md:px-12 lg:col-span-5 lg:justify-center lg:gap-8 lg:py-12">
+        <img className="profile-photo mx-auto aspect-square w-44 rounded-full border-4 border-[#293650] object-cover object-center sm:w-52 lg:w-80" src={imgProfile} alt="Karem Aranda" />
+        <div className="mx-auto max-w-md text-base leading-relaxed text-slate-300 sm:text-lg lg:text-base">
+          <p>{messages.DescriptionLabel}</p>
+          <p className="mt-3 text-slate-400">{messages.ContinuosDescriptionLabel}</p>
         </div>
-
-        <div className="lg:col-span-5 flex flex-col justify-center gap-8 p-8 md:p-12 bg-[#1b2337]/30">
-          <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-            <img
-              className="object-cover object-center rounded-full w-80"
-              src={imgProfile}
-              alt="Karem Aranda"
-            />
-          </div>
-
-          <p className="text-base mx-auto text-slate-300 text-justify leading-relaxed max-w-md">
-            {messages.DescriptionLabel}
-            <span className="text-slate-400 block mt-2">
-              {messages.ContinuosDescriptionLabel}
-            </span>
-          </p>
-
-          <div className="flex justify-center mx-auto sm:flex-row w-full max-w-lg">
-            <button className="w-[200px] bg-[#E91E8C] text-white text-xs font-bold tracking-widest uppercase py-4 px-6 rounded shadow-lg shadow-[#E91E8C]/25 hover:bg-[#c91878] transition-all transform hover:-translate-y-0.5">
-              {messages.btnSeeProjectsLabel} →
-            </button>
-            <button className="w-[200px] ml-[10px] border border-slate-600 text-slate-200 text-xs font-bold tracking-widest uppercase py-4 px-6 rounded hover:border-[#E91E8C] hover:text-[#E91E8C] transition-all">
-              {messages.btnSeeDowaloadCVLabel} →
-            </button>
-          </div>
+        <div className="home-actions mx-auto flex w-full max-w-md flex-col gap-3 sm:flex-row">
+          <a href="#projects" className="flex min-h-12 flex-1 items-center justify-center rounded bg-[#E91E8C] px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-[#E91E8C]/25 transition-all hover:-translate-y-0.5 hover:bg-[#c91878] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            {messages.btnSeeProjectsLabel} →
+          </a>
+          <a href="#contact" className="flex min-h-12 flex-1 items-center justify-center rounded border border-slate-500 px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-slate-200 transition-colors hover:border-[#E91E8C] hover:text-[#E91E8C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E91E8C]">
+            {contactLabel}
+          </a>
         </div>
       </div>
+    </main>
 
-      <div className="bg-[#E91E8C] py-3 px-6 overflow-hidden">
-        <div className="flex justify-around items-center gap-6">
-          {["React", "TypeScript", "Node.js", "REST APIs", "Git"].map(
-            (s, i) => (
-              <span
-                key={i}
-                className="text-white text-xs font-extrabold tracking-[0.25em] uppercase whitespace-nowrap"
-              >
-                {s}
-              </span>
-            )
-          )}
-        </div>
-      </div>
-    </section>
-  );
-};
+    <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 bg-[#E91E8C] px-4 py-3 sm:justify-around sm:gap-6">
+      {["React", "TypeScript", "Node.js", "REST APIs", "Git"].map((skill) => (
+        <span key={skill} className="whitespace-nowrap text-[10px] font-extrabold uppercase tracking-[0.16em] text-white sm:text-xs sm:tracking-[0.25em]">{skill}</span>
+      ))}
+    </div>
+  </section>
+);
 
 export default MainComponent;

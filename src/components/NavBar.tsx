@@ -1,43 +1,23 @@
-import { FC, ReactElement } from "react";
+import type { FC } from "react";
 
-type Route = {
-  name: string;
-  path: string;
-};
-
-const ROUTES: Route[] = [
-  {
-    name: "ABOUT",
-    path: "#about",
-  },
-  {
-    name: "PROJECTS",
-    path: "#projects",
-  },
-  {
-    name: "CONTACT",
-    path: "#contact",
-  },
+const ROUTES = [
+  { name: "About", path: "#about" },
+  { name: "Projects", path: "#projects" },
+  { name: "Contact", path: "#contact" },
 ];
 
-const NavBar: FC = () => {
-  const renderNavRoutes = (): ReactElement[] => {
-    return ROUTES.map((r) => (
+const NavBar: FC = () => (
+  <nav aria-label="Main navigation" className="home-navigation flex min-w-0 items-center">
+    {ROUTES.map(({ name, path }) => (
       <a
-        key={r.path}
-        href={r.path}
-        className="text-[#555] text-xs tracking-widest uppercase cursor-pointer hover:text-[#E91E8C] transition-colors"
+        key={path}
+        href={path}
+        className="flex min-h-11 flex-1 items-center justify-center rounded px-2 py-2 text-[11px] font-semibold uppercase tracking-wide text-slate-300 transition-colors hover:text-[#E91E8C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E91E8C] sm:px-2 sm:text-xs md:px-3"
       >
-        {r.name}
+        {name}
       </a>
-    ));
-  };
-
-  return (
-    <nav className="flex justify-between px-8 py-6">
-      <div className="flex gap-8">{renderNavRoutes()}</div>
-    </nav>
-  );
-};
+    ))}
+  </nav>
+);
 
 export default NavBar;
